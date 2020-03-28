@@ -1,3 +1,5 @@
+from receiver import PublicKey
+
 class Emitter:
 
     def __init__(self):
@@ -11,7 +13,9 @@ class Emitter:
         #   print('choose a shorter password.')
         #   write_message()
 
+    def numerize_message(self, message):#fixme
+        return int(message)
 
-    def encrypt_message(self, receiver):
-        self.__encrypted_message = self.__message ** receiver.public_key.e % receiver.public_key.n # e und n sollten doch gerade nicht private sein...
+    def encrypt_message(self, public_key: PublicKey):
+        self.encrypted_message = (self.numerize_message(self.__message) ** public_key.get_e()) % public_key.get_n() # e und n sollten doch gerade nicht private sein...
         pass

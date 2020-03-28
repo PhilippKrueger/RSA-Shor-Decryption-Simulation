@@ -14,13 +14,13 @@ if __name__ == "__main__":
     #message
     receiver.define_key()
     emitter.write_message()
-    emitter.encrypt_message(receiver)
+    emitter.encrypt_message(receiver.public_key)
     receiver.decrypt_message(emitter.encrypted_message)
-    receiver.start_bomb()
+    receiver.start_bomb(bomb)
 
     #intervention
-    spy.decrypt_message_shor(emitter.encrypted_message)
-    spy.stop_bomb()
+    # spy.decrypt_message_shor(emitter.encrypted_message)
+    # spy.stop_bomb(bomb)
 
 
 
