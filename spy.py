@@ -1,3 +1,5 @@
+from sympy import prime, factorint, mod_inverse
+
 class Spy:
     def __init__(self):
         self.decrypted_message = 0

@@ -3,34 +3,10 @@ from emitter import Emitter
 from spy import Spy
 from bomb import Bomb
 
-receiver = Receiver()
-emitter = Emitter()
-spy = Spy()
-bomb = Bomb(time_limit=100)
-
-receiver.define_key()
-emitter.write_message()
-emitter.encrypt_message(receiver)
-receiver.decrypt_message(emitter.encrypted_message)
-receiver.start_bomb()
-spy.decrypt_message_shor(emitter.encrypted_message)
-spy.stop_bomb()
-
-
-
-
-
 
 
 from sympy import prime, factorint, mod_inverse
 
-class KeyDistributor():
-    def __init__(self):
-        __p = prime(32)
-        __q = prime(42)
-
-
-        __n = p*q
 
 p, q = prime(32), prime(42)
 n = p * q
@@ -70,4 +46,26 @@ print("g: ", g)
 k=crypt(g, d)
 print("k: ", k)
 
-print(0**0)
+
+if __name__ == "__main__":
+    #initialize
+    receiver = Receiver()
+    emitter = Emitter()
+    spy = Spy()
+    bomb = Bomb(time_limit=100)
+
+    #message
+    receiver.define_key()
+    emitter.write_message()
+    emitter.encrypt_message(receiver)
+    receiver.decrypt_message(emitter.encrypted_message)
+    receiver.start_bomb()
+
+    #intervention
+    spy.decrypt_message_shor(emitter.encrypted_message)
+    spy.stop_bomb()
+
+
+
+
+
