@@ -4,7 +4,7 @@ class Emitter:
         self.encrypted_message = 0
 
     def write_message(self):
-        self.__message = 1
+        self.__message = 1 #input('Enter your last name: ')
         pass
 
     def encrypt_message(self, receiver):
