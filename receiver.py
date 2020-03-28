@@ -45,7 +45,7 @@ class Receiver:
         print("Initialize key with two Prime numbers. Specify n for the n-th prime.")
         n1 = input('n1: ')
         n2 = input('n2: ')
-        p, q = prime(n1), prime(n2)
+        p, q = prime(int(n1)), prime(int(n2))
         n = p * q
         print("Key Number n: %d, First prime p: %d, Second prime q: %d" % (n, p, q))
         phi = (p - 1) * (q - 1)
