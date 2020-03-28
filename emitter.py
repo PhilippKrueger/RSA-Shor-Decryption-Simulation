@@ -1,4 +1,5 @@
 class Emitter:
+
     def __init__(self):
         self.__message = 0
         self.encrypted_message = 0
