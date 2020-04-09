@@ -21,8 +21,3 @@ if __name__ == "__main__":
     #intervention
     # spy.decrypt_message_shor(emitter.encrypted_message)
     # spy.stop_bomb(bomb)
-
-
-
-
-
